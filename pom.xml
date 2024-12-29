@@ -28,6 +28,7 @@
         <hutool.version>5.8.34</hutool.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <transmittable-thread-local.version>2.14.5</transmittable-thread-local.version>
+        <open.feign.version>13.5</open.feign.version>
     </properties>
 
     <dependencyManagement>
@@ -56,6 +57,11 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>transmittable-thread-local</artifactId>
                 <version>${transmittable-thread-local.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.openfeign</groupId>
+                <artifactId>feign-core</artifactId>
+                <version>${open.feign.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

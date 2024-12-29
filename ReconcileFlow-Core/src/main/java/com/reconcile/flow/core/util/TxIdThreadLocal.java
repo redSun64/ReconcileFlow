@@ -12,5 +12,5 @@ import lombok.experimental.UtilityClass;
  */
 @UtilityClass
 public class TxIdThreadLocal {
-    public TransmittableThreadLocal<Long> TX_ID = new TransmittableThreadLocal<>();
+    public TransmittableThreadLocal<String> TX_ID = new TransmittableThreadLocal<>();
 }

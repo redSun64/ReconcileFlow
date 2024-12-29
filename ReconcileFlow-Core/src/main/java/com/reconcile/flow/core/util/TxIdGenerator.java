@@ -33,7 +33,7 @@ public class TxIdGenerator {
         snowflake = IdUtil.getSnowflake(workerId, 1);
     }
 
-    public long generateTxId() {
-        return snowflake.nextId();
+    public String generateTxId() {
+        return String.valueOf(snowflake.nextId());
     }
 }
