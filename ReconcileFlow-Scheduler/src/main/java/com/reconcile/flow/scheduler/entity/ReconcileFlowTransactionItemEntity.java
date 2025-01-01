@@ -1,6 +1,7 @@
 package com.reconcile.flow.scheduler.entity;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 
 import java.sql.Timestamp;
 import java.util.Arrays;

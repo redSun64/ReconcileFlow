@@ -14,5 +14,5 @@ import lombok.Data;
 @Builder
 public class RegisterServiceDTO {
     private String serviceName;
-    private String Address;
+    private String address;
 }

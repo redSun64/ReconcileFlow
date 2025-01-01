@@ -1,4 +1,4 @@
-package com.reconcile.flow.core.factory;
+package com.reconcile.flow.core.config;
 
 /**
  * @className: ReconcileFlowProviderFactory

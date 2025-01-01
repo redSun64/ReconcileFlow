@@ -36,8 +36,8 @@ public class ReconcileFlowAspect {
         String txId = TxIdThreadLocal.TX_ID.get();
         if (txId == null) {
             TxIdThreadLocal.TX_ID.set(TxIdGenerator.generateTxId());
+            //todo add new reconcile flow tx
         }
-        // add new reconcile flow tx
 
     }
 
