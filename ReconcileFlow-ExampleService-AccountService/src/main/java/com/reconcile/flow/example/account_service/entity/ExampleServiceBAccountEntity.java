@@ -1,4 +1,4 @@
-package com.reconcile.flow.example.serviceB.entity;
+package com.reconcile.flow.example.account_service.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

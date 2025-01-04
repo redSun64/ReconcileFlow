@@ -1,7 +1,7 @@
 package com.reconcile.flow.core.config.rpc;
 
 import com.xxl.rpc.core.registry.impl.LocalRegister;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import java.util.Map;
 import java.util.Set;
@@ -15,16 +15,10 @@ import java.util.Set;
  */
 public class ReconcileFlowServiceRegister extends LocalRegister {
 
-    @Value("${reconcile.flow.service.name:}")
-    private String serviceName;
-
-    @Value("${reconcile.flow.service.address:}")
-    private String serviceAddress;
 
     @Override
     public void start(Map<String, String> param) {
         super.start(param);
-        registry(Set.of(serviceName), serviceAddress);
+        param.forEach((k, v) -> registry(Set.of(k), v));
     }
-
 }

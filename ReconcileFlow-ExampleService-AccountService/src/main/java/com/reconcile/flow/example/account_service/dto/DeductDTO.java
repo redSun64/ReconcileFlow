@@ -1,4 +1,4 @@
-package com.reconcile.flow.example.serviceB.dto;
+package com.reconcile.flow.example.account_service.dto;
 
 import lombok.Data;
 

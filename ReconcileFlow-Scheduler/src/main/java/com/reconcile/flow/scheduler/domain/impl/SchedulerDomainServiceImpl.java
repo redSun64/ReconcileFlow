@@ -1,17 +1,23 @@
 package com.reconcile.flow.scheduler.domain.impl;
 
 import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.bean.copier.CopyOptions;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.TypeReference;
+import com.reconcile.flow.core.annotation.ReconcileFlowService;
 import com.reconcile.flow.core.domain.dto.ReconcileFlowTxDTO;
 import com.reconcile.flow.core.domain.dto.RegisterServiceDTO;
 import com.reconcile.flow.core.domain.service.SchedulerDomainService;
 import com.reconcile.flow.scheduler.entity.ReconcileFlowTransactionItemEntity;
 import com.reconcile.flow.scheduler.repository.ReconcileFlowTransactionItemEntityRepository;
-import com.xxl.rpc.core.remoting.provider.annotation.XxlRpcService;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Map;
 
 @Service
-@XxlRpcService
+@ReconcileFlowService
 public class SchedulerDomainServiceImpl implements SchedulerDomainService {
 
     @Resource
@@ -19,9 +25,12 @@ public class SchedulerDomainServiceImpl implements SchedulerDomainService {
 
 
     @Override
-    public void addTransaction(ReconcileFlowTxDTO txDTO) {
+    @Transactional
+    public void addOrUpdateTransaction(ReconcileFlowTxDTO txDTO) {
         ReconcileFlowTransactionItemEntity reconcileFlowTransactionItemEntity = new ReconcileFlowTransactionItemEntity();
-        BeanUtil.copyProperties(txDTO, reconcileFlowTransactionItemEntity);
+        BeanUtil.copyProperties(txDTO, reconcileFlowTransactionItemEntity, CopyOptions.create().setIgnoreProperties("param"));
+        reconcileFlowTransactionItemEntity.setParam(JSON.parseObject(txDTO.getParam(), new TypeReference<>() {
+        }));
         reconcileFlowTransactionEntityRepository.save(reconcileFlowTransactionItemEntity);
     }
 

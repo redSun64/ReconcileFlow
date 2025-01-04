@@ -1,8 +1,8 @@
-package com.reconcile.flow.example.serviceB.controller;
+package com.reconcile.flow.example.account_service.controller;
 
 
-import com.reconcile.flow.example.serviceB.dto.DeductDTO;
-import com.reconcile.flow.example.serviceB.service.AccountService;
+import com.reconcile.flow.example.account_service.dto.DeductDTO;
+import com.reconcile.flow.example.account_service.service.AccountService;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

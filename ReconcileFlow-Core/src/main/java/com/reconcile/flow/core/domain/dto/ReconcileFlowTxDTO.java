@@ -3,6 +3,8 @@ package com.reconcile.flow.core.domain.dto;
 import lombok.Builder;
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * @className: ReconcileFlowTxDTO
  * @Description: TODO
@@ -12,10 +14,11 @@ import lombok.Data;
  */
 @Data
 @Builder
-public class ReconcileFlowTxDTO {
+public class ReconcileFlowTxDTO implements Serializable {
     private String txId;
     private String methodName;
     private String param;
+    private String className;
     private String serviceName;
     private Byte status;
     private Long expectedFinishDuration;

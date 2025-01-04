@@ -1,6 +1,6 @@
-package com.reconcile.flow.example.serviceB.repository;
+package com.reconcile.flow.example.account_service.repository;
 
-import com.reconcile.flow.example.serviceB.entity.ExampleServiceBAccountOperationEntity;
+import com.reconcile.flow.example.account_service.entity.ExampleServiceBAccountOperationEntity;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

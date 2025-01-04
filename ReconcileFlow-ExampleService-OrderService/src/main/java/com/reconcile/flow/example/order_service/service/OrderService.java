@@ -6,6 +6,7 @@ import com.reconcile.flow.example.order_service.dto.DeductDTO;
 import com.reconcile.flow.example.order_service.entity.ExampleServiceAOrderEntity;
 import com.reconcile.flow.example.order_service.infrastruction.AccountServiceClient;
 import com.reconcile.flow.example.order_service.repository.ExampleServiceAOrderEntityRepository;
+import com.xxl.rpc.core.remoting.provider.annotation.XxlRpcService;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -32,6 +33,7 @@ public class OrderService {
     }
 
     @Transactional
+    @NeedReconcile("domainPayOrder")
     public void payOrder(Long orderId) {
         // execute local method
         ExampleServiceAOrderEntity order = domainPayOrder(orderId);
@@ -43,7 +45,7 @@ public class OrderService {
                 .build());
     }
 
-    @NeedReconcile
+
     public ExampleServiceAOrderEntity domainPayOrder(Long orderId) {
         // update order status
         ExampleServiceAOrderEntity order = orderEntityRepository.findById(orderId).orElseThrow();

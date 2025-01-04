@@ -16,20 +16,4 @@ public class SchedulerSpringConfig {
     @Value("${xxl-rpc.remoting.port}")
     private int port;
 
-
-
-    @Bean
-    public XxlRpcSpringProviderFactory xxlRpcSpringProviderFactory() {
-        XxlRpcSpringProviderFactory providerFactory = new XxlRpcSpringProviderFactory();
-        providerFactory.setServer(NettyServer.class);
-        providerFactory.setSerializer(HessianSerializer.class);
-        providerFactory.setCorePoolSize(-1);
-        providerFactory.setMaxPoolSize(-1);
-        providerFactory.setPort(port);
-        providerFactory.setAccessToken(null);
-        providerFactory.setServiceRegistry(LocalRegister.class);
-
-        log.info(">>>>>>>>>>> xxl-rpc provider config init finish.");
-        return providerFactory;
-    }
 }

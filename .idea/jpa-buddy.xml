@@ -3,5 +3,7 @@
   <component name="JpaBuddyIdeaProjectConfig" newRepositoryParent="org.springframework.data.repository.CrudRepository">
     <option name="defaultUnitInitialized" value="true" />
     <option name="renamerInitialized" value="true" />
+    <option name="reverseEngineeringLastDbConnectionId" value="6b88b8eb-205b-4ec7-bf0f-3c959a116558__reconcile_flow" />
+    <option name="reLastEntityCreationPackage" value="ReconcileFlow-ExampleService-AccountService/src/main/java/com/reconcile/flow/example/order_service" />
   </component>
 </project>

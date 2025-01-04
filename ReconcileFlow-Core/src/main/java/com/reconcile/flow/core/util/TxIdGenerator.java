@@ -17,21 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @UtilityClass
 public class TxIdGenerator {
-    private Snowflake snowflake;
-
-    @PostConstruct
-    void init() {
-        long workerId = 0;
-        try {
-            workerId = NetUtil.ipv4ToLong(NetUtil.getLocalhostStr());
-            log.info("当前机器 workerId: {}", workerId);
-        } catch (Exception e) {
-            log.warn("获取机器 ID 失败", e);
-            workerId = NetUtil.getLocalhost().hashCode();
-            log.info("当前机器 workerId: {}", workerId);
-        }
-        snowflake = IdUtil.getSnowflake(workerId, 1);
-    }
+    private final static Snowflake snowflake = IdUtil.getSnowflake(1, 1);
 
     public String generateTxId() {
         return String.valueOf(snowflake.nextId());

@@ -2,6 +2,7 @@ package com.reconcile.flow.scheduler.management;
 
 import com.xxl.rpc.core.remoting.invoker.annotation.XxlRpcReference;
 import com.xxl.rpc.core.remoting.invoker.generic.XxlRpcGenericService;
+import org.springframework.stereotype.Component;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -13,6 +14,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * @author: red_sun
  * @date: 2024/12/29 16:53
  */
+@Component
 public class ReconcileFlowServiceManagement {
 
     @XxlRpcReference
@@ -29,7 +31,6 @@ public class ReconcileFlowServiceManagement {
     }
 
     public void executeMethod(String className, String serviceName, String methodName, String params) {
-
         // 执行对应的服务方法
     }
 }

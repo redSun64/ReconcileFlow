@@ -29,6 +29,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <transmittable-thread-local.version>2.14.5</transmittable-thread-local.version>
         <open.feign.version>13.5</open.feign.version>
+        <guava.version>33.2.1-jre</guava.version>
+        <fastjson.version>1.2.79</fastjson.version>
     </properties>
 
     <dependencyManagement>
@@ -63,6 +65,16 @@
                 <artifactId>feign-core</artifactId>
                 <version>${open.feign.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -72,8 +84,12 @@
             <artifactId>lombok</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.xuxueli</groupId>
-            <artifactId>xxl-rpc-core</artifactId>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
         </dependency>
     </dependencies>
 
