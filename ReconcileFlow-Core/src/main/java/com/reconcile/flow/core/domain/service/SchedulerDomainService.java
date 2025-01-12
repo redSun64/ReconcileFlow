@@ -5,7 +5,7 @@ import com.reconcile.flow.core.domain.dto.RegisterServiceDTO;
 
 public interface SchedulerDomainService {
 
-    void addOrUpdateTransaction(ReconcileFlowTxDTO txDTO);
+    Long addOrUpdateTransaction(ReconcileFlowTxDTO txDTO);
 
     void registerService(RegisterServiceDTO registerServiceDTO);
 }

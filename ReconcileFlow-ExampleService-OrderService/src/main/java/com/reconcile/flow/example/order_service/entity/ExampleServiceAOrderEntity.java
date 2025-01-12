@@ -18,7 +18,7 @@ public class ExampleServiceAOrderEntity {
     private long id;
     @Basic
     @Column(name = "ORDER_STATUS")
-    private Byte orderStatus;
+    private String orderStatus;
     @Basic
     @Column(name = "USER_ID")
     private long userId;
@@ -43,11 +43,11 @@ public class ExampleServiceAOrderEntity {
         this.id = id;
     }
 
-    public Byte getOrderStatus() {
+    public String getOrderStatus() {
         return orderStatus;
     }
 
-    public void setOrderStatus(Byte orderStatus) {
+    public void setOrderStatus(String orderStatus) {
         this.orderStatus = orderStatus;
     }
 

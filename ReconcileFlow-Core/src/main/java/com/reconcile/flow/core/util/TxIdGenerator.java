@@ -19,7 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 public class TxIdGenerator {
     private final static Snowflake snowflake = IdUtil.getSnowflake(1, 1);
 
-    public String generateTxId() {
-        return String.valueOf(snowflake.nextId());
+    public Long generateTxId() {
+        return snowflake.nextId();
     }
 }

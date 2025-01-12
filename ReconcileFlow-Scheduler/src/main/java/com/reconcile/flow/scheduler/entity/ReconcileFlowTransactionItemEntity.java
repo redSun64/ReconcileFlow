@@ -33,14 +33,14 @@ public class ReconcileFlowTransactionItemEntity {
     private String methodName;
 
     @Column(name = "status")
-    private Byte status;
+    private String status;
 
     @Column(name = "param")
     @JdbcTypeCode(SqlTypes.JSON)
     private List<Map<String, Object>> param;
 
     @Column(name = "expected_finish_duration", nullable = false)
-    private Long expectedFinishDuration;
+    private Instant expectedFinishDuration;
 
     @Column(name = "create_time")
     private Instant createTime;

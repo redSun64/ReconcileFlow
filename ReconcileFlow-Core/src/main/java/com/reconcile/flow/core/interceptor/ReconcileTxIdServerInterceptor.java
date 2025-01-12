@@ -8,6 +8,8 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
+import java.util.Optional;
+
 import static com.reconcile.flow.core.constants.ReconcileFlowConstants.RECONCILE_FLOW_HEADER_KEY;
 
 /**
@@ -23,7 +25,7 @@ public class ReconcileTxIdServerInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        TxIdThreadLocal.TX_ID.set(request.getHeader(RECONCILE_FLOW_HEADER_KEY));
+        TxIdThreadLocal.TX_ID.set(Optional.ofNullable(request.getHeader(RECONCILE_FLOW_HEADER_KEY)).map(Long::valueOf).orElse(null));
         return HandlerInterceptor.super.preHandle(request, response, handler);
     }
 }

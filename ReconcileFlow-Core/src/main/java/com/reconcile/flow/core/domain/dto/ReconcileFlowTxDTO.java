@@ -4,6 +4,7 @@ import lombok.Builder;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * @className: ReconcileFlowTxDTO
@@ -15,11 +16,12 @@ import java.io.Serializable;
 @Data
 @Builder
 public class ReconcileFlowTxDTO implements Serializable {
-    private String txId;
+    private Long id;
+    private Long txId;
     private String methodName;
     private String param;
     private String className;
     private String serviceName;
-    private Byte status;
-    private Long expectedFinishDuration;
+    private String status;
+    private Date expectedFinishDuration;
 }

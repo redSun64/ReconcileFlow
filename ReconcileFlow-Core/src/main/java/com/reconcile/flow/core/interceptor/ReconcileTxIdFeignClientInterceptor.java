@@ -22,7 +22,7 @@ public class ReconcileTxIdFeignClientInterceptor implements RequestInterceptor {
     @Override
     public void apply(RequestTemplate requestTemplate) {
         if (TxIdThreadLocal.TX_ID.get() != null) {
-            requestTemplate.header(RECONCILE_FLOW_HEADER_KEY, TxIdThreadLocal.TX_ID.get());
+            requestTemplate.header(RECONCILE_FLOW_HEADER_KEY, TxIdThreadLocal.TX_ID.get().toString());
         }
     }
 }
